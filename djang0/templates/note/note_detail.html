@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS for styling -->
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+        }
+        .navbar a {
+            color: #fff;
+        }
+        .blog-card {
+            border: 1px solid #ddd;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .blog-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .blog-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .blog-card p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Blogs</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blogs</a> 
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="blog-card">
+        <h2>Blog Title</h2>
+        <img src="https://via.placeholder.com/400" alt="Blog Image">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod ipsum vitae
+            odio laoreet, in lobortis justo tristique. Suspendisse potenti. Vivamus eu erat
+            eget enim elementum rhoncus a id dolor. Sed mattis nunc in vehicula commodo.
+        </p>
+    </div>
+</div>
+
+<!-- Add Bootstrap JS (Optional) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
