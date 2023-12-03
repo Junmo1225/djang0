@@ -7,6 +7,8 @@
     <!-- Add Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Add custom CSS for styling -->
+    {% load static%}
+    <link rel="icon" href="{% static 'note/img/note_icon.png' %}" type="image">
     <style>
         /* Custom Styles */
         body {
@@ -77,76 +79,23 @@
 
 <div class="container mt-5">
     <div class="row">
+        {% for note in notes %}
         <div class="col-md-6">
             <div class="blog-card">
-                <img src="https://via.placeholder.com/100" alt="Blog Image">
+                {% if note.image %}
+                    <img src="{{ note.image.url }}" alt="Blog Image">
+                {% endif %}
                 <div class="blog-card-content">
-                    <h3>Blog Title 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3><a href="{% url 'note:note_detail' note_id=note.id %}">{{ note.title }}</a></h3>
+                    <p>{{ note.content|truncatechars:50 }}</p>
+                    <p>Date Posted: {{ note.date_posted }}</p>
                 </div>
             </div>
-            <!-- More blog cards go here -->
-            <div class="blog-card">
-                <img src="https://via.placeholder.com/100" alt="Blog Image">
-                <div class="blog-card-content">
-                    <h3>Blog Title 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <!-- More blog cards go here -->
-            <div class="blog-card">
-                <img src="https://via.placeholder.com/100" alt="Blog Image">
-                <div class="blog-card-content">
-                    <h3>Blog Title 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <!-- More blog cards go here -->
-            <div class="blog-card">
-                <img src="https://via.placeholder.com/100" alt="Blog Image">
-                <div class="blog-card-content">
-                    <h3>Blog Title 4</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <!-- More blog cards go here -->
         </div>
-        <div class="col-md-6">
-            <div class="blog-card">
-                <img src="https://via.placeholder.com/100" alt="Blog Image">
-                <div class="blog-card-content">
-                    <h3>Blog Title 5</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <!-- More blog cards go here -->
-            <div class="blog-card">
-                <img src="https://via.placeholder.com/100" alt="Blog Image">
-                <div class="blog-card-content">
-                    <h3>Blog Title 6</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <!-- More blog cards go here -->
-            <div class="blog-card">
-                <img src="https://via.placeholder.com/100" alt="Blog Image">
-                <div class="blog-card-content">
-                    <h3>Blog Title 7</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <!-- More blog cards go here -->
-            <div class="blog-card">
-                <img src="https://via.placeholder.com/100" alt="Blog Image">
-                <div class="blog-card-content">
-                    <h3>Blog Title 8</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <!-- More blog cards go here -->
-        </div>
+        {% endfor %}
     </div>
 </div>
+
 
 <!-- Add Bootstrap JS (Optional) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

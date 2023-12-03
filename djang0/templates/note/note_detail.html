@@ -70,13 +70,11 @@
 
 <div class="container mt-5">
     <div class="blog-card">
-        <h2>Blog Title</h2>
-        <img src="https://via.placeholder.com/400" alt="Blog Image">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod ipsum vitae
-            odio laoreet, in lobortis justo tristique. Suspendisse potenti. Vivamus eu erat
-            eget enim elementum rhoncus a id dolor. Sed mattis nunc in vehicula commodo.
-        </p>
+        <h2>{{ note.title }}</h2>
+        <img src="{{ note.image.url }}" alt="Blog Image">
+        <p>{{ note.content }}</p>
+        <p>{{ note.date_posted }}</p>
+        <p>Posted by {{ note.author }}</p>
     </div>
 </div>
 
