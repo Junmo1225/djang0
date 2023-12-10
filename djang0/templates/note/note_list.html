@@ -90,7 +90,7 @@
                 {% endif %}
                 <div class="blog-card-content">
                     <h3><a href="{% url 'note:note_detail' note_id=note.id %}">{{ note.title }}</a></h3>
-                    <p>{{ note.content|truncatechars:50 }}</p>
+                    <p>{{ note.content|truncatechars:69 }}</p>
                     <p>Date Posted: {{ note.date_posted }}</p>
                 </div>
             </div>
