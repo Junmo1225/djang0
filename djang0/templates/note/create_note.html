@@ -46,6 +46,53 @@
         }
         .blog-card p {
             font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .create-note-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .create-note-container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .create-note-container label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .create-note-container input[type="text"],
+        .create-note-container textarea,
+        .create-note-container input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .create-note-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .create-note-container button:hover {
+            background-color: #45a049;
+        }
+        .topspace {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -80,25 +127,24 @@
     </div>
 </nav>
 
-<div class="container mt-5">
-    <div class="row">
-        {% for note in notes %}
-        <div class="col-md-6">
-            <div class="blog-card">
-                {% if note.image %}
-                    <img src="{{ note.image.url }}" alt="Blog Image">
-                {% endif %}
-                <div class="blog-card-content">
-                    <h3><a href="{% url 'note:note_detail' note_id=note.id %}">{{ note.title }}</a></h3>
-                    <p>{{ note.content|truncatechars:50 }}</p>
-                    <p>Date Posted: {{ note.date_posted }}</p>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
+<!-- Create Box -->
+<div class="topspace container create-note-container">
+    <h1>Create Note</h1>
+    <form method="post" enctype="mutlipart/form-data">
+        {% csrf_token %}
 
+        <label for="note-title">Title:</label>
+        <input class="form-control" type="text" name="{{ form.title.name }}" value="{{ form.title.value|default:'' }}" id="{{ form.title.id_for_label }}" placeholder="Enter note title">
+
+        <label for="note-content">Note:</label>
+        <textarea class="form-control" id="{{ form.content.id_for_label}}" name="{{ form.content.name }}" placeholder="Enter your note">{{ form.content.value|default:'' }}</textarea>
+
+        <label for="{{ form.image.id_for_label }}">Image:</label>
+        <input type="file" class="form-control-file" id="{{ form.image.id_for_label}}" name="{{ form.image.name }}">
+
+        <button type="submit">Save Note</button>
+    </form>
+</div>
 
 <!-- Add Bootstrap JS (Optional) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
