@@ -20,8 +20,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    #path('', include('redirect.urls')),
     path('admin/', admin.site.urls),
-    path('note/', include('note.urls')),
+    path('', include('note.urls')),
     # path('', RedirectView.as_view(url='note/', permanent=True)),
     # path('users/', include('users.py'))
 ]

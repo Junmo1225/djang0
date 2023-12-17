@@ -17,11 +17,11 @@ def create_note(request):
     if request.method == "POST":
         form = NoteForm(request.POST, request.FILES)
         if form.is_valid():
+            print(form)
             note = form.save(commit=False)
             # note.author = request.user
             note.save()
             return redirect('note:note_list')
     else:
         form = NoteForm()
-
     return render(request, 'note/create_note.html', {'form': form})
