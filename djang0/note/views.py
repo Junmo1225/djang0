@@ -25,3 +25,5 @@ def create_note(request):
     else:
         form = NoteForm()
     return render(request, 'note/create_note.html', {'form': form})
+
+# def login(request):

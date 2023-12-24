@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(6ipkcfy4bnd&-j*mca@+_cf15m-ixugql2n08d_cs%w0hgv+w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['memohub.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
