@@ -35,16 +35,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{% url 'note:note_list' %}">Notes</a> 
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'note:create_note' %}">Create</a> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="{% url 'note:about' %}">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>

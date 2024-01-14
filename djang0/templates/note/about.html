@@ -1,0 +1,86 @@
+{% extends "note/base.html" %}
+{% load static %}
+
+{% block style %}
+<style>
+  /* Custom Styles */
+  body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .navbar {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .navbar a {
+    color: #fff;
+  }
+
+  .blog-card {
+    border: 2px solid #e1e1e1;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .blog-card img {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 50%;
+  }
+
+  .blog-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+
+  .blog-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  .blog-card p {
+    font-size: 16px;
+    color: #555;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="blog-card">
+        <img src="{% static '/note/img/logo.jpg' %}" alt="About Image">
+        <div class="blog-card-content">
+          <h3>About Our Website</h3>
+          <p>Welcome to NTS, your premier source for all things related to effective note-taking and productivity!</p>
+          <p>At NTS, we recognize the significance of capturing and organizing thoughts, ideas, and information. Our mission is to empower you with the tools and techniques needed to enhance your note-taking skills and boost your productivity.</p>
+          <p>Explore our curated blog posts to discover valuable insights on effective note-taking methods, reviews of cutting-edge note-taking apps and tools, and profound insights into how note-taking can profoundly impact your personal and professional life.</p>
+          <p>Join our community of note enthusiasts, and let's embark on a journey to make every note count!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Bootstrap JS (Optional) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
+</body>
+</html>
